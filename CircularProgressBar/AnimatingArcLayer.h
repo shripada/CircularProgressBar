@@ -10,4 +10,13 @@
 
 @interface AnimatingArcLayer : CALayer
 
+//Angles should be in radians.
+@property (nonatomic) CGFloat startAngle;
+@property (nonatomic) CGFloat endAngle;
+
+@property (nonatomic, strong) UIColor* fillColor;
+@property (nonatomic, strong) UIColor* strokeColor;
+
+@property (nonatomic, assign) BOOL  animationsEnabled;
+
 @end

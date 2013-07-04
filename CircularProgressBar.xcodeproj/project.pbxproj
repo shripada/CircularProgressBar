@@ -22,6 +22,11 @@
 		53DFB7CD1782ED0F00EDCDD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7AC1782ED0F00EDCDD3 /* UIKit.framework */; };
 		53DFB7D51782ED0F00EDCDD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53DFB7D31782ED0F00EDCDD3 /* InfoPlist.strings */; };
 		53DFB7D71782ED0F00EDCDD3 /* CircularProgressBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7D61782ED0F00EDCDD3 /* CircularProgressBarTests.m */; };
+		53DFB7E21782ED4A00EDCDD3 /* CircularProgressBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */; };
+		53DFB7E31782ED4A00EDCDD3 /* CircularProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */; };
+		53DFB7E61782F17100EDCDD3 /* AnimatingArcLayer.h in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */; };
+		53DFB7E71782F17100EDCDD3 /* AnimatingArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */; };
+		53DFB7E91782F1A200EDCDD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7E81782F1A200EDCDD3 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		53DFB7D21782ED0F00EDCDD3 /* CircularProgressBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CircularProgressBarTests-Info.plist"; sourceTree = "<group>"; };
 		53DFB7D41782ED0F00EDCDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53DFB7D61782ED0F00EDCDD3 /* CircularProgressBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularProgressBarTests.m; sourceTree = "<group>"; };
+		53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = CircularProgressBar.h; sourceTree = "<group>"; };
+		53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressBar.m; sourceTree = "<group>"; };
+		53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = AnimatingArcLayer.h; sourceTree = "<group>"; };
+		53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatingArcLayer.m; sourceTree = "<group>"; };
+		53DFB7E81782F1A200EDCDD3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DFB7E91782F1A200EDCDD3 /* QuartzCore.framework in Frameworks */,
 				53DFB7AB1782ED0F00EDCDD3 /* CoreGraphics.framework in Frameworks */,
 				53DFB7AD1782ED0F00EDCDD3 /* UIKit.framework in Frameworks */,
 				53DFB7A91782ED0F00EDCDD3 /* Foundation.framework in Frameworks */,
@@ -103,6 +114,7 @@
 		53DFB7A71782ED0F00EDCDD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53DFB7E81782F1A200EDCDD3 /* QuartzCore.framework */,
 				53DFB7A81782ED0F00EDCDD3 /* Foundation.framework */,
 				53DFB7AA1782ED0F00EDCDD3 /* CoreGraphics.framework */,
 				53DFB7AC1782ED0F00EDCDD3 /* UIKit.framework */,
@@ -122,6 +134,10 @@
 				53DFB7C11782ED0F00EDCDD3 /* ViewController.m */,
 				53DFB7C31782ED0F00EDCDD3 /* Images.xcassets */,
 				53DFB7AF1782ED0F00EDCDD3 /* Supporting Files */,
+				53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */,
+				53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */,
+				53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */,
+				53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */,
 			);
 			path = CircularProgressBar;
 			sourceTree = "<group>";
@@ -253,8 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DFB7E61782F17100EDCDD3 /* AnimatingArcLayer.h in Sources */,
 				53DFB7C21782ED0F00EDCDD3 /* ViewController.m in Sources */,
 				53DFB7B91782ED0F00EDCDD3 /* AppDelegate.m in Sources */,
+				53DFB7E21782ED4A00EDCDD3 /* CircularProgressBar.h in Sources */,
+				53DFB7E31782ED4A00EDCDD3 /* CircularProgressBar.m in Sources */,
+				53DFB7E71782F17100EDCDD3 /* AnimatingArcLayer.m in Sources */,
 				53DFB7B51782ED0F00EDCDD3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
