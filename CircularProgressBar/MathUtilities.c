@@ -15,11 +15,12 @@ float DegreesToRadians(float degrees)
 
 float UnitValueToRadians(float unitValue)
 {
-    
-    if(unitValue > 0.0)
-    {
-        return  unitValue * (22/7.0) * 2;
-    }
-    else
-        return 0.0;
+    //Pin within 0 to 1.0
+    if(unitValue < 0)
+        unitValue = 0.0;
+    else if(unitValue > 1.0)
+        unitValue = 1.0;
+ 
+    return  unitValue * (22/7.0) * 2;
+
 }

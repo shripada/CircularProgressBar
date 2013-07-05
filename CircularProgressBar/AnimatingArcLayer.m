@@ -14,17 +14,7 @@
 //These custom animatable properties must be dynamic.
 @dynamic startAngle, endAngle, fillColor, strokeColor;
 
--(CABasicAnimation *)makeAnimationForKey:(NSString *)key
-{
-	CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:key];
-    //Presentation layer always will have most recent value for the key. The 'to' value
-    //is implicitely set to the animation by QuartzCore to the value of the key that is set,
-	anim.fromValue = [[self presentationLayer] valueForKey:key];
-	anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-	anim.duration = 0.5;
-    
-	return anim;
-}
+
 
 - (id)init
 {
@@ -39,20 +29,9 @@
     return self;
 }
 
--(id<CAAction>)actionForKey:(NSString *)event
-{
-	if (([event isEqualToString:@"startAngle"] ||
-		[event isEqualToString:@"endAngle"] ||
-         [event isEqualToString:@"fillColor"] ||
-         [event isEqualToString:@"strokeColor"]) && self.animationsEnabled)
-    {
-        
-		return [self makeAnimationForKey:event];
-	}
-	
-	return [super actionForKey:event];
-}
+#pragma mark- Custom animatable key support
 
+//A custom layer, that has custom properties, should ensure it implements this method, as core animation needs to use this to create presentation layer instances during animations.
 - (id)initWithLayer:(id)layer
 {
 	if (self = [super initWithLayer:layer])
@@ -71,6 +50,34 @@
 	return self;
 }
 
+-(CABasicAnimation *)makeAnimationForKey:(NSString *)key
+{
+	CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:key];
+    //Presentation layer always will have most recent value for the key. The 'to' value
+    //is implicitely set to the animation by QuartzCore to the value of the key that is set,
+	anim.fromValue = [[self presentationLayer] valueForKey:key];
+	anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+	anim.duration = 0.5;
+    
+	return anim;
+}
+
+
+-(id<CAAction>)actionForKey:(NSString *)event
+{
+	if (([event isEqualToString:@"startAngle"] ||
+		[event isEqualToString:@"endAngle"] ||
+         [event isEqualToString:@"fillColor"] ||
+         [event isEqualToString:@"strokeColor"]) && self.animationsEnabled)
+    {
+        
+		return [self makeAnimationForKey:event];
+	}
+	
+	return [super actionForKey:event];
+}
+
+
 + (BOOL)needsDisplayForKey:(NSString *)key
 {
 	if ([key isEqualToString:@"startAngle"] ||
@@ -84,6 +91,7 @@
 	return [super needsDisplayForKey:key];
 }
 
+#pragma mark - Layer drawing
 
 -(void)drawInContext:(CGContextRef)ctx
 {

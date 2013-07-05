@@ -16,13 +16,9 @@
 {
     AnimatingArcLayer *arcLayer;
     AnimatingArcLayer *toBeFilledLayer;
-    
     AnimatingArcLayer *maskProgressLayer;
-
     CAShapeLayer *maskLayer;
-    
     CALayer* containerLayer;
-
 }
 
 
@@ -114,7 +110,7 @@
     return self;
 }
 
-#pragma mark-
+#pragma mark- Public interface
 
 - (void)setProgress:(float)progress animated:(BOOL)animated
 {

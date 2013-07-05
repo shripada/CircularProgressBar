@@ -13,6 +13,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" id="Fa7-vj-tFN">
+                                <rect key="frame" x="0.0" y="-9" width="330" height="577"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="dfA-7h-JaI" customClass="CircularProgressBar">
                                 <rect key="frame" x="60" y="114" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -75,6 +79,9 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.jpg" width="320" height="480"/>
+    </resources>
     <classes>
         <class className="CircularProgressBar" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CircularProgressBar.h"/>

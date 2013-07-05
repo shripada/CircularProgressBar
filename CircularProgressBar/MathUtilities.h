@@ -10,7 +10,8 @@
 #define CircularProgressBar_MathUtilities_h
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
     
     //Converts degrees to radians.
@@ -18,6 +19,8 @@ extern "C" {
     
     //Maps values between 0 to 1 to 0 to 2* PI radians.
     float UnitValueToRadians(float unitValue);
+
+
 #ifdef __cplusplus
 }
 #endif
