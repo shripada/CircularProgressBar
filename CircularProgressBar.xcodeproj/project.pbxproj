@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		537B0C111785A84F00D3E472 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 537B0C101785A84F00D3E472 /* background@2x.jpg */; };
+		537B0C1417867DE900D3E472 /* MathUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 537B0C1317867DE900D3E472 /* MathUtilities.c */; };
 		53DFB7A91782ED0F00EDCDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7A81782ED0F00EDCDD3 /* Foundation.framework */; };
 		53DFB7AB1782ED0F00EDCDD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7AA1782ED0F00EDCDD3 /* CoreGraphics.framework */; };
 		53DFB7AD1782ED0F00EDCDD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7AC1782ED0F00EDCDD3 /* UIKit.framework */; };
@@ -22,9 +24,7 @@
 		53DFB7CD1782ED0F00EDCDD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7AC1782ED0F00EDCDD3 /* UIKit.framework */; };
 		53DFB7D51782ED0F00EDCDD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53DFB7D31782ED0F00EDCDD3 /* InfoPlist.strings */; };
 		53DFB7D71782ED0F00EDCDD3 /* CircularProgressBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7D61782ED0F00EDCDD3 /* CircularProgressBarTests.m */; };
-		53DFB7E21782ED4A00EDCDD3 /* CircularProgressBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */; };
 		53DFB7E31782ED4A00EDCDD3 /* CircularProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */; };
-		53DFB7E61782F17100EDCDD3 /* AnimatingArcLayer.h in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */; };
 		53DFB7E71782F17100EDCDD3 /* AnimatingArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */; };
 		53DFB7E91782F1A200EDCDD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DFB7E81782F1A200EDCDD3 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		537B0C101785A84F00D3E472 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
+		537B0C1317867DE900D3E472 /* MathUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MathUtilities.c; sourceTree = "<group>"; };
+		537B0C1517867E0000D3E472 /* MathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathUtilities.h; sourceTree = "<group>"; };
 		53DFB7A51782ED0F00EDCDD3 /* CircularProgressBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularProgressBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DFB7A81782ED0F00EDCDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53DFB7AA1782ED0F00EDCDD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		537B0C0E178577BD00D3E472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */,
+				53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */,
+				53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */,
+				53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		537B0C0F1785790300D3E472 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				53DFB7B71782ED0F00EDCDD3 /* AppDelegate.h */,
+				53DFB7B81782ED0F00EDCDD3 /* AppDelegate.m */,
+				53DFB7BA1782ED0F00EDCDD3 /* Main_iPhone.storyboard */,
+				53DFB7BD1782ED0F00EDCDD3 /* Main_iPad.storyboard */,
+				53DFB7C01782ED0F00EDCDD3 /* ViewController.h */,
+				53DFB7C11782ED0F00EDCDD3 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		537B0C1217867DCD00D3E472 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				537B0C1317867DE900D3E472 /* MathUtilities.c */,
+				537B0C1517867E0000D3E472 /* MathUtilities.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		53DFB79C1782ED0F00EDCDD3 = {
 			isa = PBXGroup;
 			children = (
@@ -126,18 +162,11 @@
 		53DFB7AE1782ED0F00EDCDD3 /* CircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				53DFB7B71782ED0F00EDCDD3 /* AppDelegate.h */,
-				53DFB7B81782ED0F00EDCDD3 /* AppDelegate.m */,
-				53DFB7BA1782ED0F00EDCDD3 /* Main_iPhone.storyboard */,
-				53DFB7BD1782ED0F00EDCDD3 /* Main_iPad.storyboard */,
-				53DFB7C01782ED0F00EDCDD3 /* ViewController.h */,
-				53DFB7C11782ED0F00EDCDD3 /* ViewController.m */,
+				537B0C1217867DCD00D3E472 /* Utilities */,
+				537B0C0F1785790300D3E472 /* Controller */,
+				537B0C0E178577BD00D3E472 /* View */,
 				53DFB7C31782ED0F00EDCDD3 /* Images.xcassets */,
 				53DFB7AF1782ED0F00EDCDD3 /* Supporting Files */,
-				53DFB7E01782ED4A00EDCDD3 /* CircularProgressBar.h */,
-				53DFB7E11782ED4A00EDCDD3 /* CircularProgressBar.m */,
-				53DFB7E41782F17100EDCDD3 /* AnimatingArcLayer.h */,
-				53DFB7E51782F17100EDCDD3 /* AnimatingArcLayer.m */,
 			);
 			path = CircularProgressBar;
 			sourceTree = "<group>";
@@ -145,6 +174,7 @@
 		53DFB7AF1782ED0F00EDCDD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				537B0C101785A84F00D3E472 /* background@2x.jpg */,
 				53DFB7B01782ED0F00EDCDD3 /* CircularProgressBar-Info.plist */,
 				53DFB7B11782ED0F00EDCDD3 /* InfoPlist.strings */,
 				53DFB7B41782ED0F00EDCDD3 /* main.m */,
@@ -250,6 +280,7 @@
 				53DFB7BF1782ED0F00EDCDD3 /* Main_iPad.storyboard in Resources */,
 				53DFB7C41782ED0F00EDCDD3 /* Images.xcassets in Resources */,
 				53DFB7BC1782ED0F00EDCDD3 /* Main_iPhone.storyboard in Resources */,
+				537B0C111785A84F00D3E472 /* background@2x.jpg in Resources */,
 				53DFB7B31782ED0F00EDCDD3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53DFB7E61782F17100EDCDD3 /* AnimatingArcLayer.h in Sources */,
 				53DFB7C21782ED0F00EDCDD3 /* ViewController.m in Sources */,
 				53DFB7B91782ED0F00EDCDD3 /* AppDelegate.m in Sources */,
-				53DFB7E21782ED4A00EDCDD3 /* CircularProgressBar.h in Sources */,
+				537B0C1417867DE900D3E472 /* MathUtilities.c in Sources */,
 				53DFB7E31782ED4A00EDCDD3 /* CircularProgressBar.m in Sources */,
 				53DFB7E71782F17100EDCDD3 /* AnimatingArcLayer.m in Sources */,
 				53DFB7B51782ED0F00EDCDD3 /* main.m in Sources */,
@@ -411,6 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressBar/CircularProgressBar-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressBar/CircularProgressBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -424,6 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressBar/CircularProgressBar-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressBar/CircularProgressBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -488,6 +520,7 @@
 				53DFB7DC1782ED0F00EDCDD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53DFB7DD1782ED0F00EDCDD3 /* Build configuration list for PBXNativeTarget "CircularProgressBarTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +529,7 @@
 				53DFB7DF1782ED0F00EDCDD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import "CircularProgressBar.h"
+#import "MathUtilities.h"
 
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet CircularProgressBar* progressBar;
+@property (weak, nonatomic) IBOutlet UISlider *startPointSlider;
 
 @end
 
@@ -24,10 +26,9 @@
 {
     [super viewDidLoad];
     currentProgressValue = 0.0;
-    
-    _progressBar.extent = 0.5;
-
-
+     _progressBar.thickness = 0.1;
+    _progressBar.startAngle = M_PI;
+    _startPointSlider.transform = CGAffineTransformMakeRotation(-M_PI_2);
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,11 +39,40 @@
 
 -(IBAction)doProgress:(id)sender
 {
-    if(currentProgressValue >= 1.0)
+    if(currentProgressValue > 1.0)
+    {
         currentProgressValue = 0.0;
+        [_progressBar setProgress:currentProgressValue animated:NO];
+    }
+     
+    currentProgressValue += 0.04;
     
-    currentProgressValue += 0.01;
+    if(currentProgressValue < 0.2)
+    {
+        _progressBar.progressTintColor = [UIColor redColor];
+    }
+    else if(currentProgressValue > 0.2 && currentProgressValue < 0.6)
+    {
+        _progressBar.progressTintColor = [UIColor yellowColor];
+    }
+    else if(currentProgressValue > 0.6)
+    {
+        _progressBar.progressTintColor = [UIColor greenColor];
+    }
     
     [_progressBar setProgress:currentProgressValue animated:YES];
+}
+
+-(IBAction)doChangingExtent:(id)sender
+{
+    UISlider* slider = (UISlider*)sender;
+    
+    CGFloat progress = slider.value;
+    [_progressBar setThickness:progress];
+}
+- (IBAction)doChangeStartingPoint:(UISlider*)sender
+{
+    _progressBar.startAngle = UnitValueToRadians(sender.value);
+
 }
 @end

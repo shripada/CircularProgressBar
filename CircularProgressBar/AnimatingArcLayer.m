@@ -11,9 +11,14 @@
 
 @implementation AnimatingArcLayer
 
+//These custom animatable properties must be dynamic.
+@dynamic startAngle, endAngle, fillColor, strokeColor;
+
 -(CABasicAnimation *)makeAnimationForKey:(NSString *)key
 {
 	CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:key];
+    //Presentation layer always will have most recent value for the key. The 'to' value
+    //is implicitely set to the animation by QuartzCore to the value of the key that is set,
 	anim.fromValue = [[self presentationLayer] valueForKey:key];
 	anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 	anim.duration = 0.5;
@@ -21,20 +26,25 @@
 	return anim;
 }
 
-- (id)init {
+- (id)init
+{
     self = [super init];
-    if (self) {
-		self.fillColor = [UIColor cyanColor];
-        self.strokeColor = [UIColor cyanColor];		
+    if (self)
+    {
+		self.fillColor = [UIColor clearColor];
+        self.strokeColor = [UIColor clearColor];
 		[self setNeedsDisplay];
     }
 	
     return self;
 }
 
--(id<CAAction>)actionForKey:(NSString *)event {
+-(id<CAAction>)actionForKey:(NSString *)event
+{
 	if (([event isEqualToString:@"startAngle"] ||
-		[event isEqualToString:@"endAngle"] ) && self.animationsEnabled)
+		[event isEqualToString:@"endAngle"] ||
+         [event isEqualToString:@"fillColor"] ||
+         [event isEqualToString:@"strokeColor"]) && self.animationsEnabled)
     {
         
 		return [self makeAnimationForKey:event];
@@ -63,7 +73,10 @@
 
 + (BOOL)needsDisplayForKey:(NSString *)key
 {
-	if ([key isEqualToString:@"startAngle"] || [key isEqualToString:@"endAngle"])
+	if ([key isEqualToString:@"startAngle"] ||
+        [key isEqualToString:@"endAngle"] ||
+        [key isEqualToString:@"fillColor"] ||
+        [key isEqualToString:@"strokeColor"])
     {
 		return YES;
 	}
@@ -84,19 +97,18 @@
 	CGPoint p1 = CGPointMake(center.x + radius * cosf(self.startAngle), center.y + radius * sinf(self.startAngle));
 	CGContextAddLineToPoint(ctx, p1.x, p1.y);
     
-	int clockwise = fabs(self.startAngle) >= fabs(self.endAngle);
+    //This will decide how the arc will be filled inward or outward.
+	int clockwise = fabs(self.startAngle) > fabs(self.endAngle);
 	CGContextAddArc(ctx, center.x, center.y, radius, self.startAngle, self.endAngle, clockwise);
     
 	CGContextClosePath(ctx);
     
-	
-	// Color it
 	CGContextSetFillColorWithColor(ctx, self.fillColor.CGColor);
-	//CGContextSetStrokeColorWithColor(ctx, self.strokeColor.CGColor);
+	CGContextSetStrokeColorWithColor(ctx, self.strokeColor.CGColor);
 	CGContextSetLineWidth(ctx, 1.0);
     CGContextSetShouldAntialias(ctx, YES);
     CGContextSetAllowsAntialiasing(ctx, YES);
-	CGContextDrawPath(ctx, kCGPathFill);
+	CGContextDrawPath(ctx, kCGPathFillStroke);
 }
 
 @end
