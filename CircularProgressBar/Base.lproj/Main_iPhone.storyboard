@@ -82,21 +82,6 @@
     <resources>
         <image name="background.jpg" width="320" height="480"/>
     </resources>
-    <classes>
-        <class className="CircularProgressBar" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircularProgressBar.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doChangeStartingPoint:" candidateClass="UISlider"/>
-                <relationship kind="action" name="doChangingExtent:"/>
-                <relationship kind="action" name="doProgress:"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="CircularProgressBar"/>
-                <relationship kind="outlet" name="startPointSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
