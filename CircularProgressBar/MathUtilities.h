@@ -3,7 +3,7 @@
 //  CircularProgressBar
 //
 //  Created by nsh on 05/07/13.
-//  Copyright (c) 2013 Robosoft. All rights reserved.
+//  Copyright (c) 2013 Robosoft Technologies, Pvt. Ltd. All rights reserved.
 //
 
 #ifndef CircularProgressBar_MathUtilities_h

@@ -3,7 +3,7 @@
 //  CircularProgressBar
 //
 //  Created by nsh on 02/07/13.
-//  Copyright (c) 2013 Robosoft. All rights reserved.
+//  Copyright (c) 2013 Robosoft Technologies, Pvt. Ltd. All rights reserved.
 //
 //Based on: http://blog.pixelingene.com/2012/02/animating-pie-slices-using-a-custom-calayer/
 
@@ -13,8 +13,6 @@
 
 //These custom animatable properties must be dynamic.
 @dynamic startAngle, endAngle, fillColor, strokeColor;
-
-
 
 - (id)init
 {

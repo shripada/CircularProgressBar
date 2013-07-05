@@ -246,7 +246,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = Robosoft;
+				ORGANIZATIONNAME = "Robosoft Technologies, Pvt. Ltd.";
 				TargetAttributes = {
 					53DFB7C81782ED0F00EDCDD3 = {
 						TestTargetID = 53DFB7A41782ED0F00EDCDD3;
