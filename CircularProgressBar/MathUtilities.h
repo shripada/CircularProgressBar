@@ -20,7 +20,6 @@ extern "C"
     //Maps values between 0 to 1 to 0 to 2* PI radians.
     float UnitValueToRadians(float unitValue);
 
-
 #ifdef __cplusplus
 }
 #endif
